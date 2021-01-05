@@ -37,6 +37,7 @@ public class Storage {
         iterateDay();
         for (Robots worker: workers) {
             worker.charge(newCharge);
+            worker.carriedAmount(worker.CHARGE_MAX, currentWares);
         }
         // check which unit can carry how much
 
