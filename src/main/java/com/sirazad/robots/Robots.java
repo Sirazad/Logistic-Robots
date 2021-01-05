@@ -30,7 +30,7 @@ public abstract class Robots {
         return carriedAmount;
     }
 
-    private int getUnitPerCharge() {
+    protected int getUnitPerCharge() {
         return unitPerCharge;
     }
 
