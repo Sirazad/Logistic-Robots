@@ -7,6 +7,7 @@ public abstract class Robots {
     protected final int CARRY_MAX;
     private int chargeLevel;
     private int unitPerCharge = 2;
+    int carriedAmount = 0;
 
 
     public Robots(String name, int charge_max, int carry_max, int chargeLevel) {
@@ -20,8 +21,8 @@ public abstract class Robots {
         this.chargeLevel += charge;
     }
 
-    public int carriedAmount(int carryMax, int storedGoods) {
-        int carriedAmount = Math.min(carryMax, storedGoods);
+    public int getCarriedAmount(int carryMax, int storedGoods) {
+        carriedAmount = Math.min(carryMax, storedGoods);
         int chargeNeed = (carriedAmount+1)/getUnitPerCharge();
         while (chargeNeed > chargeLevel) {
             carriedAmount--;
