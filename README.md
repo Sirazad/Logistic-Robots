@@ -7,7 +7,9 @@ Készítsünk programot, amellyel szimulálni tudjuk ipari robotok működését
 A munkában háromféle robot vesz részt:
 
 • Mac: Maximális töltési szintje 10, maximális szállítási kapacitása 10 egység, egy egység szállítása eggyel csökkenti a töltési szintet.
+
 • Eco: Maximális töltési szintje 4, maximális szállítási kapacitása 6, két egység szállítása eggyel csökkenti a töltési szintet. (Páratlan egység szállításakor a pár nélkül maradó egység is eggyel csökkent, azaz 5 egység esetén 3 lenne a fogyasztás.) 
+
 • Pro: Maximális töltési szintje 12, maximális szállítási kapacitása 8. Egy egység szállítása 5 egységig eggyel csökkenti a töltési szintet, az 5 feletti egységek kettővel (Pl. 7 egység esetén 5+4=9 a fogyasztás.) 
 
 
