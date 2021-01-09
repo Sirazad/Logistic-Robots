@@ -6,7 +6,7 @@ public class Storage {
     private int newCharge;
     private int newWares;
     private int currentWares;
-    private int[][] logisticPlan;
+    private int[][] logisticPlan = new int[4][2];
     private int day = 0;
 
     public int[][] createLogisticPlan() {
@@ -37,13 +37,8 @@ public class Storage {
         iterateDay();
         for (Robots worker: workers) {
             worker.charge(newCharge);
-            worker.getCarriedAmount(worker.CHARGE_MAX, currentWares);
+            currentWares -= worker.getCarriedAmount(currentWares);
+            System.out.println(worker.toString()+ " carried "+ worker.carriedAmount+" and  remaining goods "+currentWares);
         }
-        // check which unit can carry how much
-
-
     }
-
-
-    //
 }

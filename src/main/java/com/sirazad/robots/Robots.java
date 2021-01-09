@@ -7,6 +7,7 @@ public abstract class Robots {
     protected final int CARRY_MAX;
     private int chargeLevel;
     private int unitPerCharge = 2;
+    int chargeNeed = 0;
     int carriedAmount = 0;
 
 
@@ -17,22 +18,53 @@ public abstract class Robots {
         this.chargeLevel = chargeLevel;
     }
 
+
     public void charge(int charge) {
         this.chargeLevel += charge;
+        if ((chargeLevel) > CHARGE_MAX) chargeLevel = CHARGE_MAX;
     }
 
-    public int getCarriedAmount(int carryMax, int storedGoods) {
-        carriedAmount = Math.min(carryMax, storedGoods);
-        int chargeNeed = (carriedAmount+1)/getUnitPerCharge();
+    public int getCarriedAmount(int storedGoods) {
+        carriedAmount = Math.min(CARRY_MAX, storedGoods);
+        this.getChargeNeed();
+
         while (chargeNeed > chargeLevel) {
             carriedAmount--;
+            this.getChargeNeed();
         }
         this.chargeLevel -= chargeNeed;
         return carriedAmount;
+    }
+
+    private int getChargeNeed() {
+        chargeNeed = carriedAmount/getUnitPerCharge();
+        return chargeNeed;
     }
 
     protected int getUnitPerCharge() {
         return unitPerCharge;
     }
 
+    public int getChargeLevel() {
+        return chargeLevel;
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName()+" "+
+                NAME + ", charges left: " + chargeLevel
+                ;
+    }
+
+
+    public void setChargeLevel(int chargeLevel) {
+        this.chargeLevel = chargeLevel;
+    }
+
+    protected void decreaseChargeLevel(int chargeNeed) {
+//        System.out.println("deducting charge needed from chargeLevel "+this.chargeLevel+"-"+chargeNeed);
+        chargeLevel = this.chargeLevel-chargeNeed;
+//        System.out.println("results in "+chargeLevel);
+
+    }
 }
