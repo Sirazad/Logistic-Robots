@@ -6,7 +6,6 @@ public abstract class Robots {
     protected final int CHARGE_MAX;
     protected final int CARRY_MAX;
     private int chargeLevel;
-    private int unitPerCharge = 2;
     int chargeNeed = 0;
     int carriedAmount = 0;
 
@@ -17,7 +16,6 @@ public abstract class Robots {
         CARRY_MAX = carry_max;
         this.chargeLevel = chargeLevel;
     }
-
 
     public void charge(int charge) {
         this.chargeLevel += charge;
@@ -36,13 +34,12 @@ public abstract class Robots {
         return carriedAmount;
     }
 
-    private int getChargeNeed() {
-        chargeNeed = carriedAmount/getUnitPerCharge();
-        return chargeNeed;
+    private void getChargeNeed() {
+        chargeNeed = carriedAmount/ getUNIT_PER_CHARGE();
     }
 
-    protected int getUnitPerCharge() {
-        return unitPerCharge;
+    protected int getUNIT_PER_CHARGE() {
+        return 2;
     }
 
     public int getChargeLevel() {
@@ -52,19 +49,10 @@ public abstract class Robots {
     @Override
     public String toString() {
         return this.getClass().getSimpleName()+" "+
-                NAME + ", charges left: " + chargeLevel
-                ;
-    }
-
-
-    public void setChargeLevel(int chargeLevel) {
-        this.chargeLevel = chargeLevel;
+                NAME + ", charges left: " + chargeLevel;
     }
 
     protected void decreaseChargeLevel(int chargeNeed) {
-//        System.out.println("deducting charge needed from chargeLevel "+this.chargeLevel+"-"+chargeNeed);
         chargeLevel = this.chargeLevel-chargeNeed;
-//        System.out.println("results in "+chargeLevel);
-
     }
 }

@@ -10,7 +10,7 @@ public class Mac extends Robots {
     }
 
     @Override
-    protected int getUnitPerCharge() {
+    protected int getUNIT_PER_CHARGE() {
         return 1;
     }
 

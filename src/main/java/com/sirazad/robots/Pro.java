@@ -23,7 +23,7 @@ public class Pro extends Robots {
     }
 
 
-    public int getChargeNeed() {
+    public void getChargeNeed() {
         int temp = carriedAmount;
         int counter = 0;
         while (temp >5) {
@@ -35,6 +35,5 @@ public class Pro extends Robots {
             temp--;
         }
         super.chargeNeed = counter;
-        return counter;
     }
 }
