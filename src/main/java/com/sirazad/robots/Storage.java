@@ -30,13 +30,15 @@ public class Storage {
 
 
     // simulate a day
+
     public void simulateOneDay(List<Robots> robots) {
 
         iterateDay();
         for (Robots worker: robots) {
             worker.charge(newCharge);
             currentWares -= worker.getCarriedAmount(currentWares);
-            System.out.println(worker.toString()+ " carried "+ worker.carriedAmount+" and  remaining goods "+currentWares);
+            System.out.println(worker.toString()+ " carried "+ worker.carriedAmount+
+                    " and  remaining goods "+currentWares);
         }
     }
 }

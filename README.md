@@ -26,3 +26,5 @@ A szimulációban résztvevő robotok:
 • 3CPO, egy Eco típusú robot 3 egység alap töltöttségi szinttel
 • BB8, egy Pro típusú robot 10 egység alap töltöttséggel
 • E12, egy Eco típus, 4 egység alap töltöttséggel
+
+A robotokat olvassa be egy file-ból és a győzteseket tegye ki egy file-ba a program.

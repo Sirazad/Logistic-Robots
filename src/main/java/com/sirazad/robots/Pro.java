@@ -34,6 +34,6 @@ public class Pro extends Robots {
             counter ++;
             temp--;
         }
-        super.chargeNeed = counter;
-    }
+        chargeNeed = counter;
+        }
 }

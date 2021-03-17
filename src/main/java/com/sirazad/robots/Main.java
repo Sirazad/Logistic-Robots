@@ -18,11 +18,8 @@ public class Main {
         int[][] logisticPlan = depo.createLogisticPlan();
 
         depo.simulateOneDay(workers);
-        System.out.println();
         depo.simulateOneDay(workers);
-        System.out.println();
         depo.simulateOneDay(workers);
-        System.out.println();
         depo.simulateOneDay(workers);
 
     }
