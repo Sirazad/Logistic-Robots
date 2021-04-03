@@ -1,8 +1,9 @@
 package com.sirazad.robots;
 
 
+import com.sirazad.robots.model.*;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {

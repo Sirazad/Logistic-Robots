@@ -1,4 +1,4 @@
-package com.sirazad.robots;
+package com.sirazad.robots.model;
 
 import java.util.List;
 
