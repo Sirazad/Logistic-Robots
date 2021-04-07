@@ -16,9 +16,8 @@ public class DaoManager {
     }
 
     private List<Robots> getDataFromFile() {
-        List<Robots> robots = new ArrayList<>();
-        //TODO code DaoFile, implement its methods here
-        return robots;
+        DaoFile readFile = new DaoFile();
+        return readFile.getContestants(readFile.readFile("src/main/resources/robots"));
     }
 
 
